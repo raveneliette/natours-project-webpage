@@ -71,30 +71,29 @@ body {
     text-transform: uppercase;
     backface-visibility: hidden; /* The back part gets hidden; also it fix the little shake animations */
     margin-bottom: 6rem;
-}
 
-.heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out
-    
-    /*
-    animation-delay: 3s;
-    animation-iteration-count: 3;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    */
-}
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation: moveInLeft 1s ease-out
+        /*
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        */
+    }
 
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation: moveInRight 1s ease-out;
+    }
 }
 
 @keyframes moveInLeft {

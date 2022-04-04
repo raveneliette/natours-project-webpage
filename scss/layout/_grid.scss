@@ -10,16 +10,27 @@
 
     @include clearfix;
 
+    // The symbol ^ means that we want the beginning to be what we set here. This allows us to select only the ones that start with col-.
+    // Another symbol asterisk * - means select all the classes, which contain this part col.
+    // Another symbol dollar sign $ - means any class that ends with col dash
+    // It will select all of the elements in which the class attribute starts ^. In this case, all the class attribute start with col.
+    [class^="col-"] {
+        background-color: orangered;
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
     .col-1-of-2 {
         //114rem(total width of the row container) - 8rem(the gutter) = 106rem / 2 = 53rem
         // max-width: calc((114rem - 8rem) / 2);
         // or below
         width: calc((100% - #{$gutter-horizontal}) / 2);
-        background-color: orangered;
-        float: left;
     }
 
-    & :not(:last-child) {
-        margin-right: $gutter-horizontal;
+    .col-1-of-3 {
+        width: calc((100% - (#{$gutter-horizontal} * 2)) / 3);
     }
 }

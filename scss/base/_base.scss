@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* With this, we allow the user to zoom in on the page automatically. 
+   Not only to change the font size, but to also zoom in on the page. */
+/* 10px / 16px = .625px = 62.5%;
+          .625px * 16px = 10px
+    if the users changes to 20px
+          .625px * 20px = 12.5px */
+html {
+    font-size: 62.5%; // This defines what 1rem is
+}
+
+body {
+    box-sizing: border-box;
+}

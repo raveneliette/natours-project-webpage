@@ -1,0 +1,25 @@
+.row {
+    max-width: $grid-width; //to convert into rem units, 1140px / 10px = 114rem and instead of width change it to max-width
+    background-color: #eee;
+    margin: 0 auto;
+
+
+    &:not(:last-child) { // Selects everything except the last child
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    .col-1-of-2 {
+        //114rem(total width of the row container) - 8rem(the gutter) = 106rem / 2 = 53rem
+        // max-width: calc((114rem - 8rem) / 2);
+        // or below
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+        background-color: orangered;
+        float: left;
+    }
+
+    & :not(:last-child) {
+        margin-right: $gutter-horizontal;
+    }
+}

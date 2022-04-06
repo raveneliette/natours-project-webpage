@@ -1,6 +1,5 @@
 .row {
     max-width: $grid-width; //to convert into rem units, 1140px / 10px = 114rem and instead of width change it to max-width
-    background-color: #eee;
     margin: 0 auto;
 
 
@@ -15,7 +14,6 @@
     // Another symbol dollar sign $ - means any class that ends with col dash
     // It will select all of the elements in which the class attribute starts ^. In this case, all the class attribute start with col.
     [class^="col-"] {
-        background-color: orangered;
         float: left;
 
         &:not(:last-child) {

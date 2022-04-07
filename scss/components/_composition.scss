@@ -33,7 +33,7 @@
         }
     }
     
-    // This will compiled below
+    // This will compiled in the css see below comment
     // .composition:hover .composition__photo:not(:hover)
     &:hover &__photo:not(:hover) {
         transform: scale(.95);

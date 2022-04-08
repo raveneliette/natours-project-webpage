@@ -5,7 +5,7 @@
 }
 
 .section-features {
-    // height: 95vh;
+    margin-top: -10rem;
     padding: 20rem 0;
     background-image: linear-gradient(
         to right bottom, 
@@ -13,6 +13,10 @@
         rgba($color-primary-dark, 0.8)), 
         url(../img/nat-4.jpg);
     background-size: cover;
+    transform: skewY(-7deg);
 
-    clip-path: polygon(0 25vh, 100% 0, 100% 75vh, 0 100%);
+    // ampersand(&) direct-child(>) all of them(*)
+    & > * {
+        transform: skewY(7deg);
+    }
 }

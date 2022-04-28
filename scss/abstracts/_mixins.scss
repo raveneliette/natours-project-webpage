@@ -6,7 +6,7 @@
     }
 }
 
-@mixin center-horizontal-vertical {
+@mixin center-horizontal-vertical { // other name like "@mixin absCenter"
     position: absolute;
     top: 50%;
     left: 50%;

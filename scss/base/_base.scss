@@ -30,7 +30,7 @@ html {
         font-size: 56.25%; // I want 1rem = 9px, 9 / 16 = .5625 or 56.25%
     }
 
-    @include respond(tab-port) { //width < 600?
+    @include respond(tab-port) { //width < 900?
         font-size: 50%; // I want 1rem = 8px, 8 / 16 = .5 or 50%
     }
 

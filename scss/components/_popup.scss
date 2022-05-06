@@ -12,6 +12,7 @@
 
     &__content {
         width: 75%;
+        background-color: $color-white;
         box-shadow: 0 2rem 4rem rgba($color-black, .2);
         @include center-horizontal-vertical;
         border-radius: $border-radius-md;
@@ -20,11 +21,47 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.25);
         transition: all .5s .2s;
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include respond(laptop) {
+            display: grid;
+            width: 70%;
+            height: 90%;
+            overflow: scroll;
+        }
+
+        @include respond(tab-port) {
+            width: 85%;
+        }
+
+        @include respond(phone) {
+            width: 90%;
+        }
     }
 
     &__left {
         width: 33.333333%;
         display: table-cell; // For same height
+        position: absolute;
+
+        @include respond(laptop) {
+            width: 100%;
+            height: 30vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include respond(tab-land) {
+            height: 25vh;
+        }
+
+        @include respond(phone) {
+            display: none;
+        }
     }
 
     &__right {
@@ -33,11 +70,32 @@
         display: table-cell; // For same height
         vertical-align: middle; // Contents will aligned in the middle
         padding: 3rem 5rem;
+
+        @include respond(laptop) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 30rem 0 5rem 0;
+        }
+
+        @include respond(tab-land) {
+            margin-top: 28rem;
+        }
+
+        @include respond(phone) {
+            padding: 5rem 2.5rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
     }
 
     &__img {
         display: block;
         width: 100%;
+        height: 100%;
     }
 
     &__text {
@@ -51,6 +109,10 @@
         -webkit-hyphens: auto; // 30/04/2022 https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens#browser_compatibility
             -ms-hyphens: auto; // 30/04/2022
                 hyphens: auto; // Automatically figured out where to place the hyphens
+
+        @include respond(phone) {
+            column-count: 1;
+        }
     }
 
     // Open states

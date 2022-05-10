@@ -4,13 +4,47 @@
         to right bottom, 
         rgba($color-primary-light, 0.8), 
         rgba($color-primary-dark, 0.8)), 
-        url(../img/hero.jpg);
+        url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
 
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
             clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    // The large version of the hero image is shown when the resolution is higher than 192.
+    // So when we have a 2x screen, and at the same time, whenever the width is larger than 600px.
+    // Because if it's below 600px, then it doesn't really make sense to display such a higher resolution image.
+
+    // // aT 2.0 Device Pixel Ratio (DPR)
+    // @media (min-resolution: 192dpi) and (min-width: 600px) {
+    //     background-image: linear-gradient(
+    //         to right bottom, 
+    //         rgba($color-secondary-light, 0.8), 
+    //         rgba($color-secondary-dark, 0.8)), 
+    //         url(../img/hero.jpg);
+    // }
+
+    // // At 1.0 Device Pixel Ratio (DPR)
+    // @media (min-width: 2000px) {
+    //     background-image: linear-gradient(
+    //         to right bottom, 
+    //         rgba($color-secondary-light, 0.8), 
+    //         rgba($color-secondary-dark, 0.8)), 
+    //         url(../img/hero.jpg);
+    // }
+
+    // Combining (Less Code)
+    // Remember media queries are always rem
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), // 600px / 16px = 37.5em
+           (min-width: 125em) { // 2000px / 16px = 37.5em
+               background-image: linear-gradient(
+                   to right bottom, 
+                   rgba($color-secondary-light, 0.8), 
+                   rgba($color-secondary-dark, 0.8)), 
+                   url(../img/hero.jpg);
+            }
+    
 
     @include respond(phone) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);

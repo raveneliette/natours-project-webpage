@@ -10,6 +10,15 @@
     visibility: hidden;
     transition: all .3s;
 
+    // What we want to happen if this property is supported
+    // And what we want to happen is the backgroun-color and etc.
+    // And this we just implemented graceful degradation using the supports @ rule a feature query
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+
     &__content {
         width: 75%;
         background-color: $color-white;

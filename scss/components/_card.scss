@@ -182,7 +182,11 @@
 
 
 
-    @include respond(tab-port) {
+    // @include respond(tab-port)
+    // The card should be displayed with the back part visible when the screen is smaller than max-width: 56.25em.
+    // Or whenever we're using a device where we can not hover. Which basically means whenever we have a device which uses touch as the primary input.
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover: none) { // Opposite hover: hover
         height: auto;
         border-radius: 3px;
         background-color: $color-white;
